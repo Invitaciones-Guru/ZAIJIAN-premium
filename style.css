@@ -1,0 +1,580 @@
+:root {
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --gray: #f4f4f4;
+    --gold: #c5a059; /* Un tono dorado sutil para destacar */
+}
+
+
+
+
+
+
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Esto evita que el navegador haga zoom out para mostrar animaciones */
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+body { margin: 0; font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); }
+
+/* Todas las fotos Blanco y Negro Alto Contraste */
+img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.1); }
+
+/* Hero Split */
+.hero-split { display: grid; grid-template-columns: 1.2fr 0.8fr; height: 100vh; background: var(--gray); }
+.vertical-title { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; letter-spacing: 15px; }
+.vertical-title h1 { font-family: 'Bodoni Moda', serif; font-size: 4rem; margin: 20px 0; writing-mode: vertical-rl; transform: rotate(180deg); }
+/* Ajuste para el lado del texto en el Hero */
+.hero-text-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita que el título se salga */
+}
+
+
+/* Mural de Eventos */
+.event-mural { padding: 100px 0; }
+.mural-row { display: grid; grid-template-columns: 1fr 1fr; align-items: center; margin-bottom: 80px; }
+.mural-row.reverse { direction: rtl; }
+.mural-row.reverse .mural-text-box { direction: ltr; }
+.mural-text-box { padding: 60px; text-align: left; }
+.event-num { font-size: 5rem; font-family: 'Bodoni Moda', serif; opacity: 0.1; position: absolute; margin-top: -40px; }
+.mural-text-box h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 10px; }
+.btn-underline { text-decoration: none; color: var(--black); border-bottom: 2px solid var(--black); padding-bottom: 5px; font-weight: 600; font-size: 0.8rem; letter-spacing: 3px; }
+
+/* RSVP NOIR (Inspirado en tu imagen pero con estilo propio) */
+.rsvp-noir { background: var(--black); color: var(--white); padding: 120px 20px; text-align: center; }
+.rsvp-container { max-width: 500px; margin: 0 auto; }
+.rsvp-title { font-family: 'Bodoni Moda', serif; font-size: 4rem; letter-spacing: 15px; margin-bottom: 10px; }
+.rsvp-subtitle { font-weight: 100; letter-spacing: 3px; margin-bottom: 50px; color: #888; }
+
+.noir-form { display: flex; flex-direction: column; gap: 40px; }
+.noir-form input, .noir-form select {
+    background: transparent; border: none; border-bottom: 1px solid #333; color: var(--white);
+    padding: 15px 0; font-family: 'Montserrat'; font-size: 1rem; letter-spacing: 2px; outline: none; transition: 0.3s;
+}
+.noir-form input:focus { border-bottom: 1px solid var(--white); }
+
+.btn-gold { 
+    background: var(--white); color: var(--black); border: none; padding: 20px; 
+    font-weight: 600; letter-spacing: 4px; cursor: pointer; transition: 0.4s;
+}
+.btn-gold:hover { background: var(--gold); color: var(--white); }
+.adults-only { margin-top: 40px; font-size: 0.6rem; letter-spacing: 5px; color: #555; }
+
+/* Timer */
+.clock-display { display: flex; justify-content: center; gap: 30px; font-family: 'Bodoni Moda', serif; font-size: 2.5rem; }
+
+
+
+/* DISEÑO PADRES LUXURY */
+/* --- DISEÑO PADRES Y MENSAJE --- */
+/* --- PADRES SIMETRÍA EDITORIAL --- */
+.wedding-message-vogue { 
+    padding: 100px 20px; 
+    background: #fff; 
+    text-align: center;
+}
+
+.parents-editorial-grid { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 40px; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+.family-unit { flex: 1; }
+
+/* Alineación hacia el centro */
+.right-align { text-align: right; }
+.left-align { text-align: left; }
+
+.family-label { 
+    font-size: 0.6rem; 
+    letter-spacing: 4px; 
+    color: #aaa; 
+    margin-bottom: 15px; 
+    display: block; 
+}
+
+.parent-name { 
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 300; 
+    font-size: 1.1rem; 
+    letter-spacing: 1px; 
+    margin: 5px 0; 
+    color: #1a1a1a;
+}
+
+.vertical-divider { 
+    width: 1px; 
+    height: 80px; 
+    background: #eee; 
+}
+
+/* Ajuste para celulares: centramos todo para que sea legible */
+@media (max-width: 768px) {
+    .parents-editorial-grid { 
+        flex-direction: column; 
+        gap: 30px; 
+    }
+    .right-align, .left-align { 
+        text-align: center; 
+    }
+    .vertical-divider { 
+        width: 40px; 
+        height: 1px; 
+    }
+}
+
+/* Estilo del Mensaje Central (Mantenlo si ya lo tenías) */
+.message-wrapper { max-width: 550px; margin: 0 auto 60px; }
+.ampersand-bg { 
+    font-family: 'Bodoni Moda', serif; 
+    font-size: 7rem; 
+    color: #f9f9f9; 
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 0; 
+    margin-top: -30px;
+}
+.main-wedding-quote { 
+    position: relative; 
+    z-index: 1; 
+    font-family: 'Playfair Display', serif; 
+    font-style: italic; 
+    font-size: 1.2rem; 
+    color: #444; 
+}
+
+
+
+
+
+/* DISEÑO ÁLBUM EDITORIAL */
+.album-editorial-section { padding: 80px 20px; background: #f9f9f9; }
+.album-layout { 
+    display: grid; grid-template-columns: 1fr 1fr; max-width: 1000px; 
+    margin: 0 auto; align-items: center; border: 1px solid #eee; background: #fff;
+}
+.album-text { padding: 60px; text-align: left; }
+.album-title { font-family: 'Bodoni Moda', serif; font-size: 2.5rem; margin-bottom: 20px; }
+.album-desc { font-size: 0.9rem; line-height: 1.8; color: #666; margin-bottom: 30px; }
+.btn-noir-minimal { 
+    padding: 15px 30px; border: 1px solid #000; text-decoration: none; 
+    color: #000; font-size: 0.7rem; letter-spacing: 3px; font-weight: 600; transition: 0.3s;
+}
+.btn-noir-minimal:hover { background: #000; color: #fff; }
+
+.album-visual { background: #000; padding: 60px; display: flex; justify-content: center; }
+.qr-placeholder { border: 1px solid rgba(255,255,255,0.2); padding: 20px; text-align: center; color: #fff; }
+.qr-img { width: 150px; height: 150px; filter: invert(1); margin-bottom: 15px; } /* Invertimos para que se vea blanco en fondo negro */
+.qr-placeholder span { font-size: 0.6rem; letter-spacing: 2px; opacity: 0.7; display: block; }
+
+/* Ajuste móvil */
+@media (max-width: 768px) {
+    .album-layout { grid-template-columns: 1fr; }
+    .parents-container { flex-direction: column; }
+}
+
+
+
+
+/* --- ESTILO ITINERARIO --- */
+.itinerary-vogue {
+    padding: 80px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.script-title {
+    font-family: 'Playfair Display', serif; /* O la fuente cursiva que estés usando */
+    font-style: italic;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.vertical-line-short {
+    width: 1px;
+    height: 40px;
+    background: #000;
+    margin: 0 auto 40px;
+    opacity: 0.2;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Línea vertical decorativa detrás de los eventos */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #eee;
+    z-index: 0;
+}
+
+.timeline-item {
+    position: relative;
+    z-index: 1;
+    background: #fff; /* Para tapar la línea de fondo justo tras el texto */
+    padding: 10px 0;
+}
+
+.time {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.event-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 5px;
+    color: #000;
+}
+
+
+/* El resto del CSS que ya teníamos... */
+.footer-signature {
+    padding: 30px 20px;
+    text-align: center;
+    background: var(--white-bg); /* O el color de fondo que prefieras */
+    opacity: 0.6; /* Lo hace más sutil */
+}
+
+.footer-signature p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem; /* Tamaño chiquito */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dark-text);
+    margin: 0;
+}
+
+.dress-code-content {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid var(--green-light); /* Una línea divisoria fina */
+    margin-top: 10px;
+}
+
+.btn-inspo:hover {
+    background: var(--brown-earth);
+    color: white;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+
+
+
+/* --- AGREGADO: GALERÍA Y LIGHTBOX --- */
+/* GALERÍA ESTILO VOGUE EDITORIAL */
+.gallery-section-vogue {
+    padding: 100px 20px;
+    background: #fff;
+}
+
+.vogue-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas base */
+    grid-auto-rows: 200px; /* Altura base de las filas */
+    grid-auto-flow: dense; /* Rellena huecos automáticamente */
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.vogue-item {
+    overflow: hidden;
+    position: relative;
+    background: #f4f4f4;
+}
+
+.vogue-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+    filter: grayscale(100%) contrast(1.1);
+}
+
+.vogue-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Formas variadas estilo revista */
+.vogue-tall {
+    grid-row: span 3; /* Ocupa 3 filas hacia abajo */
+}
+
+.vogue-wide {
+    grid-column: span 2; /* Ocupa 2 columnas de ancho */
+    grid-row: span 2;
+}
+
+/* Ajuste para Celulares */
+@media (max-width: 768px) {
+    .vogue-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+        grid-auto-rows: 150px;
+    }
+    
+    .vogue-tall {
+        grid-row: span 2;
+    }
+    
+    .vogue-wide {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
+
+
+/* --- AGREGADO: MESA DE REGALOS --- */
+.gifts-section { padding: 100px 20px; background: #fff; border-top: 1px solid #eee; }
+.gifts-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+.gift-card {
+    flex: 1;
+    padding: 40px;
+    border: 1px solid #eee;
+    text-align: center;
+    background: #fcfcfc;
+}
+.gift-card h3 { font-family: 'Bodoni Moda', serif; letter-spacing: 3px; margin-bottom: 20px; }
+.gift-card strong { display: block; margin: 15px 0; font-size: 1.2rem; letter-spacing: 2px; }
+
+@media (max-width: 768px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gifts-container { flex-direction: column; }
+}
+
+
+
+
+
+
+.music-player {
+    position: fixed; top: 20px; right: 20px; z-index: 1000;
+    background: rgba(255,255,255,0.9); padding: 10px 15px;
+    border: 1px solid var(--black); cursor: pointer; font-size: 0.6rem; letter-spacing: 2px;
+}
+
+
+/*/* HERO EXACTO COMO EL EJEMPLO — SIN CAMBIAR A COLUMNA EN CELULAR */
+@media (max-width: 768px) {
+
+    .hero-split {
+        display: grid;
+        grid-template-columns: 1fr 0.8fr; /* mantiene proporción */
+        height: 100vh;
+    }
+
+    .hero-image-side img {
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    .vertical-title h1 {
+        font-size: 2.8rem; /* más pequeño pero vertical */
+        letter-spacing: 12px;
+    }
+
+    .vertical-title span {
+        font-size: 0.8rem;
+        letter-spacing: 6px;
+    }
+}
+
+
+/* EVENTOS — Mantener DOS COLUMNAS también en celular */
+@media (max-width: 768px) {
+
+    .mural-row {
+        grid-template-columns: 1fr 1fr !important;
+        margin-bottom: 40px;
+    }
+
+    .mural-img-box img {
+        height: 100%;
+        max-height: 250px;     /* evita que crezca demasiado */
+        object-fit: cover;
+    }
+
+    .mural-text-box {
+        padding: 20px !important;
+    }
+
+    .event-num {
+        font-size: 3rem;
+    }
+
+    .mural-text-box h2 {
+        font-size: 1.8rem;
+    }
+
+    .mural-text-box p {
+        font-size: 0.9rem;
+    }
+
+    .btn-underline {
+        font-size: 0.7rem;
+    }
+}
+
+
+
+
+/* COUNTDOWN DENTRO DE FOTO */
+.countdown-editorial-vogue {
+    width: 100%;
+    background: #fff;
+    padding: 0; /* Sin separación */
+    line-height: 0;
+}
+
+.countdown-image-wrap {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Altura ideal para móvil y desktop */
+    overflow: hidden;
+}
+
+.countdown-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.2) brightness(0.7); /* Grayscale y oscurecido para legibilidad */
+}
+
+.countdown-inner-content {
+    position: absolute;
+    bottom: 40px; /* Lo pega a la parte de abajo */
+    left: 50%;
+    transform: translateX(-50%); /* Centrado perfecto */
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    line-height: normal; /* Resetea el line-height de la imagen */
+}
+
+.faltan-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 2rem;
+    letter-spacing: 8px;
+    margin-bottom: 15px;
+    text-transform: lowercase;
+    font-weight: 400;
+}
+
+.clock-display-vogue {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    font-family: 'Bodoni Moda', serif;
+}
+
+.clock-display-vogue div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.clock-display-vogue span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-top: 8px;
+}
+
+/* Ajuste móvil */
+@media (max-width: 768px) {
+    .countdown-image-wrap { height: 50vh; }
+    .clock-display-vogue div { font-size: 1.8rem; }
+    .clock-display-vogue { gap: 15px; }
+    .faltan-text { font-size: 1.5rem; }
+}
+
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+
+
+
+/* --- NUEVA SECCIÓN HISTORIA VOGUE --- */
+.story-vogue { padding: 100px 20px; background: #fff; }
+.story-container { 
+    display: grid; grid-template-columns: 1fr 1fr; 
+    max-width: 1000px; margin: 0 auto; align-items: center; gap: 60px;
+}
+.story-label { font-size: 0.6rem; letter-spacing: 5px; color: #aaa; }
+.story-title { font-family: 'Bodoni Moda', serif; font-size: 3.5rem; margin: 20px 0; }
+.story-p { font-size: 0.95rem; line-height: 2; color: #333; font-weight: 300; }
+.story-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.4rem; margin-top: 30px; color: #000; }
+.story-image-block { height: 600px; }
+
+/* --- GUESTBOOK VOGUE --- */
+.guestbook-vogue { padding: 80px 20px; background: #f9f9f9; }
+.messages-slider { 
+    display: flex; gap: 30px; overflow-x: auto; padding: 40px 0;
+    max-width: 1000px; margin: 0 auto; scroll-snap-type: x mandatory;
+}
+.message-item { 
+    flex: 0 0 300px; background: #fff; padding: 40px; 
+    border: 1px solid #eee; scroll-snap-align: center;
+}
+.message-item p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; margin-bottom: 20px; }
+.message-item span { font-size: 0.7rem; letter-spacing: 2px; font-weight: 600; text-transform: uppercase; }
+
+/* RESPONSIVO PARA HISTORIA */
+@media (max-width: 768px) {
+    .story-container { grid-template-columns: 1fr; gap: 30px; }
+    .story-image-block { height: 400px; order: -1; } /* La foto sube en móvil */
+    .story-title { font-size: 2.5rem; }
+}
