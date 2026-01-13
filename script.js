@@ -4,6 +4,18 @@ AOS.init({
     once: true
 });
 
+// Efecto visual táctil para la galería
+document.querySelectorAll('.vogue-item').forEach(item => {
+    item.addEventListener('touchstart', function() {
+        this.style.transform = "scale(0.98)"; // Se hunde tantito al picar
+    });
+    item.addEventListener('touchend', function() {
+        this.style.transform = "scale(1)"; // Regresa a su tamaño
+    });
+});
+
+
+
 // LÓGICA DE MÚSICA (Auto-play forzado)
 const musicBtn = document.getElementById('musicBtn');
 const music = document.getElementById('weddingMusic');
