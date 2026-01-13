@@ -4,15 +4,33 @@ AOS.init({
     once: true
 });
 
-// Efecto visual táctil para la galería
-document.querySelectorAll('.vogue-item').forEach(item => {
-    item.addEventListener('touchstart', function() {
-        this.style.transform = "scale(0.98)"; // Se hunde tantito al picar
-    });
-    item.addEventListener('touchend', function() {
-        this.style.transform = "scale(1)"; // Regresa a su tamaño
-    });
-});
+function openModal(src) {
+    const modal = document.getElementById('modal-galeria');
+    const img = document.getElementById('img-expandida');
+    
+    img.src = src;
+    modal.style.display = "flex";
+    
+    // Un pequeño delay para que la transición de CSS se note
+    setTimeout(() => {
+        modal.classList.add('active');
+    }, 10);
+    
+    document.body.style.overflow = "hidden";
+}
+
+function cerrarGaleria() {
+    const modal = document.getElementById('modal-galeria');
+    
+    modal.classList.remove('active');
+    
+    // Esperamos a que termine la animación antes de ocultar el div
+    setTimeout(() => {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    }, 400);
+}
+
 
 
 
