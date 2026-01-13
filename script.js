@@ -53,7 +53,11 @@ function startTimer() {
         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const s = Math.floor((diff % (1000 * 60)) / 1000);
-        timerElement.innerHTML = `<div>${d}d</div><div>${h}h</div><div>${m}m</div><div>${s}s</div>`;
+        timerElement.innerHTML = `
+    <div>${d}<span>días</span></div>
+    <div>${h}<span>hr</span></div>
+    <div>${m}<span>min</span></div>
+    <div>${s}<span>seg</span></div>`;
     }, 1000);
 }
 startTimer();
